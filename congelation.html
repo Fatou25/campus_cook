@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Préparer et congeler vos repas - Campus Cook</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FAF3E0;
+            color: #2F3E46;
+        }
+        /* En-tête */
+        header {
+            background-color: #1F3D1F;
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-text {
+            text-align: center;
+            flex-grow: 1;
+        }
+        header img {
+            width: 120px;
+            height: auto;
+        }
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.8rem;
+            margin: 5px 0 0;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #1B5E20;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            display: inline-block;
+            padding: 15px 20px;
+            background-color: #C2783B;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+        .submit-btn:hover {
+            background-color: #A15D2E;
+        }
+        .info-box {
+            background-color: #FFF3E0;
+            padding: 15px;
+            border-left: 5px solid #C2783B;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        function calculerExpiration() {
+            let datePreparation = document.getElementById("date").value;
+            let duree = parseInt(document.getElementById("duree").value);
+            if (datePreparation) {
+                let date = new Date(datePreparation);
+                date.setDate(date.getDate() + duree);
+                document.getElementById("expiration").innerText = "❄️ À consommer avant le : " + date.toLocaleDateString("fr-FR");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo Campus Cook">
+        <div class="header-text">
+            <h1>Campus Cook</h1>
+            <p>Manger bien, dépenser moins, partager plus</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Préparer et congeler vos repas</h2>
+        <p style="text-align: center;">Préparer vos repas à l’avance permet de <strong>gagner du temps</strong> et <strong>éviter le gaspillage</strong>.</p>
+
+        <div class="info-box">
+            <h3>❄️ Pourquoi congeler vos repas ?</h3>
+            <ul>
+                <li>🌟 Gagnez du temps en cuisinant en grande quantité.</li>
+                <li>💰 Évitez le gaspillage et optimisez vos courses.</li>
+                <li>🍽️ Mangez sainement avec des repas équilibrés.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>📢 Conseils pour une congélation efficace :</h3>
+            <ul>
+                <li>🔹 Utilisez des <strong>contenants hermétiques</strong> pour éviter le dessèchement.</li>
+                <li>🔹 Étiquetez vos repas avec la <strong>date de congélation</strong>.</li>
+                <li>🔹 Privilégiez des <strong>portions individuelles</strong> pour un réchauffage rapide.</li>
+                <li>🔹 <strong>Ne recongelez jamais</strong> un aliment déjà décongelé.</li>
+            </ul>
+        </div>
+
+        <h3>📝 Alors, vous voulez préparer quoi en quantité et pour combien de jours ?</h3>
+        <p>Indiquez votre plat et la durée de conservation souhaitée (max **10 jours**).</p>
+        
+        <form action="confirmation_congelation.html" method="POST">
+            <div class="form-group">
+                <label for="nom">Nom du plat :</label>
+                <input type="text" id="nom" name="nom" placeholder="Exemple : Soupe aux légumes" required>
+            </div>
+            <div class="form-group">
+                <label for="quantite">Quantité préparée (en portions) :</label>
+                <input type="number" id="quantite" name="quantite" placeholder="Exemple : 5 portions" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date de préparation :</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="duree">Durée de conservation estimée (max 10 jours) :</label>
+                <select id="duree" name="duree" onchange="calculerExpiration()" required>
+                    <option value="2">2 jours</option>
+                    <option value="3">3 jours</option>
+                    <option value="4">4 jours</option>
+                    <option value="5">5 jours</option>
+                    <option value="6">6 jours</option>
+                    <option value="7">7 jours</option>
+                    <option value="8">8 jours</option>
+                    <option value="9">9 jours</option>
+                    <option value="10">10 jours</option>
+                </select>
+            </div>
+            <p id="expiration" style="font-weight: bold; color: #D35400;"></p>
+            <button type="submit" class="submit-btn">Ajouter à ma liste</button>
+        </form>
+    </div>
+</body>
+</html>

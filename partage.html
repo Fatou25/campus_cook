@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partager une recette - Campus Cook</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FAF3E0;
+            color: #2F3E46;
+        }
+        /* En-tête */
+        header {
+            background-color: #1F3D1F; /* Vert foncé */
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-text {
+            text-align: center;
+            flex-grow: 1;
+        }
+        header img {
+            width: 120px;
+            height: auto;
+        }
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.8rem;
+            margin: 5px 0 0;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #1B5E20;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            display: inline-block;
+            padding: 15px 20px;
+            background-color: #C2783B;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+        .submit-btn:hover {
+            background-color: #A15D2E;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo Campus Cook">
+        <div class="header-text">
+            <h1>Campus Cook</h1>
+            <p>Manger bien, dépenser moins, partager plus</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Partagez votre recette</h2>
+        <form action="confirmation_partage.html" method="POST">
+            <div class="form-group">
+                <label for="nom">Nom de la recette :</label>
+                <input type="text" id="nom" name="nom" placeholder="Exemple : Tarte aux légumes" required>
+            </div>
+            <div class="form-group">
+                <label for="ingredients">Ingrédients (séparés par des virgules) :</label>
+                <input type="text" id="ingredients" name="ingredients" placeholder="Exemple : farine, œufs, tomates, fromage" required>
+            </div>
+            <div class="form-group">
+                <label for="preparation">Étapes de préparation :</label>
+                <textarea id="preparation" name="preparation" rows="6" placeholder="Décrivez comment préparer la recette..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Partager ma recette</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Étudiant Futé - Cuisine Simplifiée</title>
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF6E3; /* Beige clair */
+            color: #333;
+        }
+
+        /* En-tête */
+        header {
+            background-color: #1F3D1F; /* Vert foncé */
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Logo à gauche, texte centré */
+        }
+
+        /* Conteneur texte */
+        .header-text {
+            text-align: center;
+            flex-grow: 1; /* Permet au texte de rester centré */
+        }
+
+        /* Logo */
+        header img {
+            width: 170px; /* Taille du logo */
+            height: auto;
+        }
+
+        /* Titre principal */
+        header h1 {
+            font-size: 3.5rem; /* Taille plus grande */
+            font-weight: 800;
+            margin: 0;
+        }
+
+        /* Slogan */
+        header p {
+            font-size: 1.8rem;
+            margin: 5px 0 0;
+            font-weight: bold;
+        }
+
+        /* Conteneur principal */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 25px;
+        }
+
+        /* Sections */
+        .section {
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        /* Boutons */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: #C2783B; /* Orange foncé */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: 0.3s ease-in-out;
+            border: none;
+        }
+
+        .button:hover {
+            background-color: #A15D2E; /* Changement de couleur au survol */
+            transform: scale(1.05);
+        }
+
+        /* Section spéciale pour les choix d'ingrédients */
+        .ingredients-section {
+            background-color: white;
+            padding: 60px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo Étudiant Futé">
+        <div class="header-text">
+            <h1>Campus Cook</h1>
+            <p>Manger bien, dépenser moins, partager plus</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h3>Avez-vous du temps libre ? Prévoir c'est gagner du temps</h3>
+            <div class="buttons">
+                <a href="congelation.html" class="button">Préparer et congeler vos repas</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Envie de partager vos repas ?</h3>
+            <div class="buttons">
+                <a href="partage.html" class="button">Je partage ma recette</a>
+            </div>
+        </div>
+
+        <h1 style="text-align: center;">Je souhaite cuisiner</h1>
+        <div class="ingredients-section">
+            <a href="ingredients.html" class="button">J'ai des ingrédients</a>
+            <a href="courses.html" class="button">Je n'ai pas d'ingrédients</a>
+        </div>
+    </div>
+</body>
+</html>

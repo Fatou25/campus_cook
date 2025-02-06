@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrer vos ingrédients - Campus Cook</title>
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FAF3E0; /* Beige clair */
+            color: #2F3E46;
+        }
+
+        /* En-tête */
+        header {
+            background-color: #1F3D1F; /* Vert foncé */
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Conteneur du texte dans l'en-tête */
+        .header-text {
+            text-align: center;
+            flex-grow: 1; /* Assure que le texte reste centré */
+        }
+
+        /* Logo */
+        header img {
+            width: 170px; /* Taille ajustée */
+            height: auto;
+        }
+
+        /* Titre principal */
+        header h1 {
+            font-size: 3.5rem; /* Agrandir le titre */
+            font-weight: 800;
+            margin: 0;
+        }
+
+        /* Slogan */
+        header p {
+            font-size: 1.5rem;
+            margin: 5px 0 0;
+            font-weight: bold;
+        }
+
+        /* Conteneur principal */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Titres */
+        h2 {
+            color: #1B5E20;
+            text-align: center;
+            font-size: 2.2rem;
+        }
+
+        /* Formulaire */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Bouton */
+        .submit-btn {
+            display: inline-block;
+            padding: 15px 20px;
+            background-color: #C2783B;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+        }
+        .submit-btn:hover {
+            background-color: #A15D2E;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo Campus Cook">
+        <div class="header-text">
+            <h1>Campus Cook</h1>
+            <p>Manger bien, dépenser moins, partager plus</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Entrer vos ingrédients</h2>
+        <form action="recettes.html" method="GET">
+            <div class="form-group">
+                <label for="ingredients">Listez vos ingrédients (séparés par des virgules) :</label>
+                <input type="text" id="ingredients" name="ingredients" placeholder="Exemple : riz, tomates, poulet">
+            </div>
+            <button type="submit" class="submit-btn">Rechercher des recettes</button>
+        </form>
+    </div>
+</body>
+</html>
